@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Lookups.Service.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lookups.WebAPI.Controllers.Base
@@ -6,7 +7,11 @@ namespace Lookups.WebAPI.Controllers.Base
     /// <inheritdoc />
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    ////for jwt token auth
+    //[Authorize]
+
+    //for Basic Auth username:admin password:Admin@123  
+    [BasicAuth]
     public class BaseController : ControllerBase
     {
        

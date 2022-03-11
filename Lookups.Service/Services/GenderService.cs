@@ -36,16 +36,5 @@ namespace Lookups.Service.Services
             return Mapper.Map<Gender, GenderDto>(gender);
         }
 
-        public async Task<IEnumerable<Guid>> GendersPredicate(GenderFilterDto filterDto)
-        {
-            var predicate = Helper.GetPredicate<Gender, GenderFilterDto>(filterDto);
-            var list = await UnitOfWork.GetRepository<Gender>().FindAsync(predicate);
-            return list.Select(q => q.Id).ToList();
-        }
-        public async Task<IEnumerable<GenderDto>> GetGenders(List<Guid> ids)
-        {
-            var genders = await UnitOfWork.GetRepository<Gender>().FindAsync(l => ids.Contains(l.Id));
-            return Mapper.Map<IEnumerable<Gender>, IEnumerable<GenderDto>>(genders);
-        }
     }
 }

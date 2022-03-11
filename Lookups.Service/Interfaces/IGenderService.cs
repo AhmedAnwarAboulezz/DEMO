@@ -12,7 +12,5 @@ namespace Lookups.Service.Interfaces
         Task<GenderDto> Get(Guid id);
         Task<IEnumerable<GenderDto>> GetAll();
         Task<IEnumerable<DropdownDto>> GetDropdownList();
-        Task<IEnumerable<Guid>> GendersPredicate(GenderFilterDto filterDto);
-        Task<IEnumerable<GenderDto>> GetGenders(List<Guid> ids);
     }
 }

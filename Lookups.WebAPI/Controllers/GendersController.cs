@@ -48,28 +48,6 @@ namespace Lookups.WebAPI.Controllers
             var gender = await _genderService.Get(id);
             return Ok(gender);
         }
-        /// <summary>
-        /// For used in another services
-        /// </summary>
-        /// <param name="filteringDto"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> GendersPredicate(GenderFilterDto filteringDto)
-        {
-            var list = await _genderService.GendersPredicate(filteringDto);
-            return Ok(list);
-        }
-        /// <summary>
-        /// For used in another services
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> GetGenders(List<Guid> ids)
-        {
-            var genders = await _genderService.GetGenders(ids);
-
-            return Ok(genders);
-        }
+        
     }
 }
